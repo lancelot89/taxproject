@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+<div class="container">
+    <h1>計算結果</h1>
+    <div class="list-group list-group-horizontal">
+        <div class="list-group-item col-md-4">所得税</div>
+        <div class="list-group-item list-group-item-primary col-md-8 ">￥{{ object.income_tax|intcomma }}.-</div>
+    </div>
+
+    <div class="list-group list-group-horizontal">
+        <div class="list-group-item col-6 col-md-4">住民税</div>
+        <div class="list-group-item list-group-item-primary col-12 col-md-8 ">￥{{ object.resident_tax|intcomma }}.-
+        </div>
+    </div>
+
+    <div class="list-group list-group-horizontal">
+        <div class="list-group-item col-6 col-md-4">国民健康保険料</div>
+        <div class="list-group-item list-group-item-primary col-12 col-md-8 ">
+            ￥{{ object.health_insurance_tax|intcomma }}.-</div>
+    </div>
+
+    <div class="list-group list-group-horizontal">
+        <div class="list-group-item col-6 col-md-4">ふるさと納税限度額</div>
+        <div class="list-group-item list-group-item-primary col-12 col-md-8 ">￥{{ object.max_housetown_tax|intcomma }}.-
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

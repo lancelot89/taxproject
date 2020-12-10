@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form class="form-tax" method="POST">{% csrf_token %}
+    <div class="container">
+        <!-- Content here -->
+
+        <h1>税金計算</h1>
+        <div class="form-group row">
+            <label for="input_annual_income" class="col-sm-2 col-form-label">年収</label>
+            <div class="col-sm-10">
+                <input type="tell" class="form-control" id="annual_income" name="annual_income">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="input_insurance_fee" class="col-sm-2 col-form-label">社会保険料</label>
+            <div class="col-sm-10">
+                <input type="tell" class="form-control" id="insurance_fee" name="insurance_fee">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="input_life_fee" class="col-sm-2 col-form-label">一般生命</label>
+            <div class="col-sm-10">
+                <input type="tell" class="form-control" id="life_fee" name="life_fee">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="input_care_fee" class="col-sm-2 col-form-label">介護保険</label>
+            <div class="col-sm-10">
+                <input type="tell" class="form-control" id="care_fee" name="care_fee">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="input_pension_fee" class="col-sm-2 col-form-label">個人年金</label>
+            <div class="col-sm-10">
+                <input type="tell" class="form-control" id="pension_fee" name="pension_fee">
+            </div>
+        </div>
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">青色申告の有無</legend>
+            <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="blue_yes" id="blue_yes1" value=True checked>
+                    <label class="form-check-label" for="blue_yes1">
+                        有
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="blue_yes" id="blue_yes2" value=False>
+                    <label class="form-check-label" for="blue_yes2">
+                        無
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">e-taxの有無</legend>
+            <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="basic_yes" id="basic_yes1" value=True checked>
+                    <label class="form-check-label" for="basic_yes1">
+                        有
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="basic_yes" id="basic_yes2" value=False>
+                    <label class="form-check-label" for="basic_yes2">
+                        無
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">計算</button>
+    </div>
+
+</form>
+</div>
+
+{% endblock content %}
